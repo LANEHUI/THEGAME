@@ -46,7 +46,7 @@ public class Star extends BaseModel {
             case 1:
                 starPic = starPic2;
                 bloodAdd = 1;
-                speedAdd = 2;
+                speedAdd = 3;
                 break;
             default:
                 break;

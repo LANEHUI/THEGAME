@@ -98,9 +98,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
                     if (!gameRunFlag){
 //                        paint.setColor(Color.BLACK);
 //                        canvas.drawRect(0,0,screenWidth,screenHeight,paint);
-                        paint.setTextSize(200);
+                        paint.setTextSize(100);
                         paint.setColor(Color.RED);;
-                        canvas.drawText("You Lose",(screenWidth - paint.measureText("You Lose")) / 2,screenHeight /2,paint);
+                        canvas.drawText("一个人 一座城，您守护了这里"+count+"年",(screenWidth - paint.measureText("一个人 一座城，您守护了这里"+count+"年")) / 2,screenHeight /2,paint);
                     }
 
                 } catch (Exception e) {
