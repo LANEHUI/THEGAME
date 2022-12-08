@@ -1,5 +1,6 @@
 package com.example.mygame.activity;
 
+import static com.example.mygame.global.Config.activities;
 import static com.example.mygame.global.Config.bulletPic;
 import static com.example.mygame.global.Config.enemyPic1;
 import static com.example.mygame.global.Config.enemyPic2;
@@ -25,11 +26,27 @@ import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mygame.R;
+import com.example.mygame.music.Music;
 import com.example.mygame.tools.DeviceTools;
 import com.example.mygame.view.GameView;
 
 public class MainActivity extends AppCompatActivity {
     public GameView gameView = null;
+    private Music music = new Music();
+
+    @Override
+    protected void onResume() {
+        // TODO Auto-generated method stub
+        super.onResume();
+        music.play(this, R.raw.bgm);
+    }
+
+    @Override
+    protected void onPause() {
+        // TODO Auto-generated method stub
+        super.onPause();
+        music.stop(this);
+    }
 
 
     @Override
@@ -64,5 +81,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onTouchEvent (MotionEvent event){
         return gameView.onTouchEvent(event);
     }
+
+
 
 }

@@ -21,6 +21,7 @@ import android.view.SurfaceView;
 import androidx.annotation.NonNull;
 
 import com.example.mygame.activity.MainActivity;
+import com.example.mygame.activity.MenuActivity;
 import com.example.mygame.activity.StartActivity;
 import com.example.mygame.entity.Bullet;
 import com.example.mygame.entity.Enemy;
@@ -122,7 +123,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
         }catch (Exception e){
             e.printStackTrace();
         }
-        Intent intent = new Intent(mainActivity,StartActivity.class);
+        Intent intent = new Intent(mainActivity, MenuActivity.class);
         Log.d("END","end" + gameRunFlag);
         mainActivity.startActivity(intent);
     }

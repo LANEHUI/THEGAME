@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 
 import com.example.mygame.R;
 import com.example.mygame.activity.MainActivity;
+import com.example.mygame.activity.MenuActivity;
 import com.example.mygame.activity.StartActivity;
 import com.example.mygame.entity.Enemy;
 import com.example.mygame.entity.Star;
@@ -41,7 +42,7 @@ public class StartView  extends SurfaceView implements SurfaceHolder.Callback, R
         super(context);
         startBK = DeviceTools.resizeBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.start_bk),screenWidth,screenHeight);
         text = new String[]{"你是否想象过，在另一个纪元里做自己的王?", "若是如B612号小行星般孤独寂寞呢？",
-        "若是野兽横行、一片狼藉呢？", "你是否愿意一直在自己的世界里做孤独的王?","愿意","非常愿意"};
+        "若是野兽横行、一片狼藉呢？", "你是否愿意一直在自己的世界里做孤独的王?","返回","非常愿意"};
         canvas = new Canvas();
         paint = new Paint();
         surfaceHolder = getHolder();
@@ -133,10 +134,14 @@ public class StartView  extends SurfaceView implements SurfaceHolder.Callback, R
 
     public boolean onTouchEvent(MotionEvent event){
         if (event.getAction() == MotionEvent.ACTION_DOWN || event.getAction() == MotionEvent.ACTION_MOVE){
-            if(rect1.contains((int) event.getX(),(int) event.getY()) || rect2.contains((int) event.getX(),(int) event.getY())){
+            if(rect2.contains((int) event.getX(),(int) event.getY()) ){
                 Intent intent = new Intent(startActivity, MainActivity.class);
                 startActivity.startActivity(intent);
             }
+        }
+        else if (rect1.contains((int) event.getX(),(int) event.getY())){
+            Intent intent = new Intent(startActivity, MenuActivity.class);
+            startActivity.startActivity(intent);
         }
         return true;
     }

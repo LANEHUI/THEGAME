@@ -1,6 +1,10 @@
 package com.example.mygame.global;
 
+import android.app.Activity;
 import android.graphics.Bitmap;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Config {
     public static int screenWidth;
@@ -17,4 +21,5 @@ public class Config {
     public static Bitmap enemyPic3;
     public static Bitmap starPic1;
     public static Bitmap starPic2;
+    public static List<Activity> activities = new ArrayList<>();
 }

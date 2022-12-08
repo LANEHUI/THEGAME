@@ -1,12 +1,18 @@
 package com.example.mygame.tools;
 
+import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.util.Log;
 
 import com.example.mygame.global.Config;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DeviceTools {
+
+
 
     public static Bitmap resizeBitmap(Bitmap bitmap){
         if (bitmap != null){
@@ -39,5 +45,13 @@ public class DeviceTools {
         }else {
             return null;
         }
+    }
+
+    public static void addActivity(List<Activity> activities,Activity activity){
+        activities.add(activity);
+    }
+
+    public static void removeActivity(List<Activity> activities,Activity activity){
+        activities.remove(activity);
     }
 }
